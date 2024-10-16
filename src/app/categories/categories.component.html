@@ -1,0 +1,23 @@
+<div class="categories-container">
+  <h2>Categories</h2>
+  <div class="add-category-form">
+    <mat-form-field>
+      <input matInput [(ngModel)]="newCategory" placeholder="New category" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="addCategory()">
+      Add Category
+    </button>
+  </div>
+  <mat-list>
+    <mat-list-item *ngFor="let category of categories">
+      <span class="category-name">{{ category }}</span>
+      <button
+        mat-icon-button
+        (click)="deleteCategory(category)"
+        matTooltip="Delete Category"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+</div>
